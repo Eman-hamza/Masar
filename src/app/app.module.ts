@@ -23,6 +23,7 @@ import { StudentDataComponent } from './student-data/student-data.component';
 import { GradesForAdminComponent } from './grades-for-admin/grades-for-admin.component';
 import { CreateExamComponent } from './create-exam/create-exam.component';
 import { CreateQestionComponent } from './create-qestion/create-qestion.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { CreateQestionComponent } from './create-qestion/create-qestion.componen
         }
       }
     ),
+    BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
   providers: [],

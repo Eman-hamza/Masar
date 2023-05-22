@@ -47,23 +47,21 @@ gettokenID(): string {
 } 
 submitexam(ExamFom:any){
   console.log(ExamFom.value)
-  console.log("vvvvvvv")
+  // console.log("vvvvvvv")
   ExamFom.teacherId=this.gettokenID()
   this.admin.AddExam(ExamFom.value).subscribe({ 
-    next: (beers) => {
+    next: (id) => {
+        this.route.navigate(["CreateQestion",id]);
+     console.log(id)
       // this.toast.success("Data Successuflly subimted")
-      this.route.navigate(['/CreateQestion']);
       console.log("Data Successuflly subimted")
     },
     error: (e) => {
         console.log(e)
-        // this.toast.error("error")
     },
   })  
  }
- NavigateToexamGrade(id:any){
-  // console.log("urururururur")
-  console.log(id.id)
-  this.route.navigate(["CreateQestion",id.id]);
-}
+//  NavigateToexamGrade(id:any){
+//   this.route.navigate(["CreateQestion",id.id]);
+// }
 }
