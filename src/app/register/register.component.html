@@ -1,0 +1,173 @@
+<app-before-register #child style="display:none;" ></app-before-register>
+<section >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col col-lg-5">
+        <div class="card" style="border-radius: 1rem;border:1px dashed rgb(199, 199, 199);">
+          <div class="row ">
+            <!-- <div class="col-md-8 col-lg-5 d-none d-md-block">
+              <img
+                src="assets/search.png"
+                alt="login form"
+                class="img-fluid"
+                style="border-radius: 1rem 0 0 1rem;"
+              />
+            </div> -->
+            <div class="col-lg-12 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-7 text-black">
+
+                <div *ngIf='errors' class="alert alert-danger m-2">
+                  {{errors}}
+                </div>
+                <div class="alert mt-2 alert-danger" *ngIf="RegisterInvalid">
+                  <p>
+                    <i class="fa-solid fa-circle-exclamation"></i> 
+                    اسم المستخدم تم حجزه !
+                  </p> 
+                </div>
+                <form [formGroup]="registerform" (ngSubmit)='submitRegister(registerform)'>
+                  <div class="d-flex align-items-center mb-3 pb-1" style="display:flex;justify-content: center;"> 
+                    <span class="h1 fw-bold mb-0">إنشاء حساب جديد</span>
+                  </div>
+
+
+                  <!-- ********************** username ****************************8 -->
+                  <div class="form-outline mb-4">
+                    <!-- ngModel [(ngModel)]="usermodel.email" -->
+                    <input
+                      type="username"
+                      formControlName="username"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="اسم المستخدم "
+                    />
+                    <!-- //error alert -->
+                    <div  class="alert mt-2 alert-danger" *ngIf="registerform.get('username')?.errors != null 
+                    && registerform.get('username')?.touched" >
+                      <p *ngIf="registerform.get('username')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i>اسم المستخدم مطلوب باللغه الانجليزية</p>
+                      <!-- <p *ngIf="registerform.get('username')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> username must contains one Capital and small characters</p> -->
+                      <!-- <p *ngIf="registerform.get('username')?.errors?.['forbiddenvalue'] "><i class="fa-solid fa-circle-exclamation"></i> username not allowed word [Admin or Adminstrator]</p> -->
+                    </div>
+                  </div>
+                  <!-- ****************************************** -->
+                  <div class="form-outline mb-4"  >
+                    <!-- ngModel [(ngModel)]="usermodel.email" -->
+                    <input
+                      type="fourthName"
+                      formControlName="fourthName"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="اسم رباعي "
+                    />
+                    <!-- //error alert -->
+                    <div  class="alert mt-2 alert-danger" *ngIf="registerform.get('fourthName')?.errors != null 
+                    && registerform.get('fourthName')?.touched" >
+                      <p *ngIf="registerform.get('fourthName')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> الإسم رباعي مطلوب</p>
+                    </div>
+                  </div>
+                  <!-- ******************************* NationalID ********************************** -->
+                  <div class="form-outline mb-4">
+                    <!-- ngModel [(ngModel)]="usermodel.email" -->
+                    <input
+                      type="nationalID"
+                      formControlName="nationalID"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="بطاقة الهويةالوطنية"
+                    />
+                    <!-- //error alert -->
+                    <div  class="alert mt-2 alert-danger" *ngIf="registerform.get('nationalID')?.errors != null 
+                    && registerform.get('nationalID')?.touched" >
+                      <p *ngIf="registerform.get('nationalID')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> بطاقة الهوية الوطنية مطلوب</p>
+                      <p *ngIf="registerform.get('nationalID')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> رقم الهوية لابد أن يكون 11 رقم</p>
+                    </div>
+                  </div>
+
+<!-- *************************************** usernumber************************************** -->
+<div class="form-outline mb-4">
+  <input
+    type="userNumber"
+    formControlName="userNumber"
+    id="form2Example17"
+    class="form-control form-control-lg"
+    placeholder="رقم المستخدم (اختياري) "
+  />
+  <!-- //error alert -->
+</div>
+<!-- *************************************email************************************ -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      formControlName="email"
+                      id="form2Example17"
+                      class="form-control form-control-lg"
+                      placeholder="الايميل"
+                    />
+                    <!-- //error alert -->
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerform.get('email')?.errors != null 
+                    && registerform.get('email')?.touched" >
+                      <p *ngIf="registerform.get('email')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> email is required</p>
+                      <p *ngIf="registerform.get('email')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> email must contains @ </p>
+                      <!-- <p>email must contians @</p> -->
+                    </div>
+                    <!-- <label class="form-label" for="form2Example17">Email address</label> -->
+                  </div>
+<!-- ***************************************password********************************** -->
+                  <div class="form-outline mb-4">
+                    <!-- [(ngModel)]="usermodel.password" ngModel -->
+                    <input
+                      type="password"
+                      formControlName="password"
+                      id="form2Example27"
+                      class="form-control form-control-lg"
+                      placeholder="الرقم السري"
+                    />
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerform.get('password')?.errors != null 
+                    && registerform.get('password')?.touched" >
+                      <p *ngIf="registerform.get('password')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i>الرقم السري مطلوب</p>
+                      <p *ngIf="registerform.get('password')?.errors?.['minlength']"><i class="fa-solid fa-circle-exclamation"></i>الرقم السري لابد الا يقل عن 8</p>
+
+                      <!-- <p>email must contians @</p> -->
+                    </div>
+                    <!-- <label class="form-label" for="form2Example27">Password</label> -->
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      formControlName="confirmpassword"
+                      id="form3Example4cdg"
+                      class="form-control form-control-lg"
+                      placeholder="إعاده الرقم السري"
+                    />
+                    <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerform.get('confirmpassword')?.errors != null 
+                    && registerform.get('confirmpassword')?.touched" >
+                      <p *ngIf="registerform.get('confirmpassword')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i>الرقم السري مطلوب</p>
+                      <!-- <p *ngIf="registerform.get('confirmpassword')?.errors?.['maxlength'] "><i class="fa-solid fa-circle-exclamation"></i> password must Be max Length 8</p> -->
+                      <p *ngIf="registerform.get('confirmpassword')?.errors?.['minlength']"><i class="fa-solid fa-circle-exclamation"></i>الرقم السري لا يقل عن 8</p>
+                      <p *ngIf="registerform.get('confirmpassword')?.errors?.['mismatch'] "><i class="fa-solid fa-circle-exclamation"></i>تأكيد لرقم السري لابد أن يكون مشابهه للرقم السري</p>
+
+                    </div>
+                  </div>
+                  
+                  <div class=" mb-4">
+                    <button [disabled]="registerform.invalid" class="btn btn-lg btn-block" data-mdb-toggle="modal" data-mdb-target="#exampleModal" type="submit" style="color: white;background-color:#40844e;">
+                      إنشاء
+                    </button>
+                  </div>
+                  <!-- <a class="small text-muted" href="#!">Forgot password?</a> -->
+                  <p class="mb-5 pb-lg-2" style="color: #5760c0">
+                    هل لديك حساب ؟
+                    <a [routerLink]="['/Login']" style="color: #393f81"
+                      >سجل الآن</a
+                    >
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

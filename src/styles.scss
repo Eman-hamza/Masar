@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+body{
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+    color: white;
+}
+.active{
+    background-color:#9e4f8f;
+    color: white;
+    margin: 3px;
+    border-radius: 23px;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link{
+    color: white;
+}
+@import 'ngx-toastr/toastr';

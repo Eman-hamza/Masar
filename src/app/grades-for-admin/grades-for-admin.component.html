@@ -1,0 +1,31 @@
+
+<section class="vh-100">
+    <div class="container py-5 h-90">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-8">
+                <div class="card" style="border-radius: 1rem;border:1px dashed rgb(192, 192, 192);">
+                    <!-- <div class="row g-0"> -->
+                        <!-- <div class="col-md-6 col-lg-5 d-none d-lg-block"> -->
+
+                          <h2 style="text-align: center;color: black;background-color:#6DA8DF;border-radius: 9px;padding: 10px;margin: 0px;">درجات الطلاب</h2>
+                            <table class="table" style="text-align: center;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col" style="text-align: center;border-left: 1px solid #B9B9B9;background-color: #dadada;">اسم الطالب</th>
+                                    <th scope="col"  style="background-color: #dadada;">درجة الطلاب</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let item of studentGrades">
+                                    <td  style="border-left: 1px solid #B9B9B9">{{item.studentsName}}</td>
+                                    <td>{{item.resultsOfExam}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        <!-- </div> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
