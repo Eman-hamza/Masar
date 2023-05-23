@@ -10,6 +10,15 @@ import { Observable } from 'rxjs';
 export class AdminService {
 
   constructor(private _httpClient:HttpClient,private route:Router) { }
+  currentuser:any;
+  gettokenID(): string {
+    let token: any = localStorage.getItem("userInfo");
+    this.currentuser = jwtDecode(token);
+    console.log(this.currentuser);
+    var nameIdentifier = this.currentuser['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
+    console.log(nameIdentifier);
+    return nameIdentifier;
+  } 
 
   teacherData( formDta:any):Observable<any>
   {
@@ -27,10 +36,14 @@ export class AdminService {
   {
    return this._httpClient.delete(`http://localhost:5294/api/Student/DeleteStudent?id=${id}`)
   }
-  GetAllExams( Data:any):Observable<any>
+  GetAllExams(Data:any):Observable<any>
   {
-  return this._httpClient.get(`http://localhost:5294/api/Exam/Exams`,Data);
+  return this._httpClient.get(`http://localhost:5294/api/Exam/ExamsAdmin`,Data);
   }
+  GetAllExamsTeacher(Data:any):Observable<any>
+  {
+  return this._httpClient.get(`http://localhost:5294/api/Exam/Exams/${this.gettokenID()}`,Data);
+  }  
   ExamDelete( id:number):Observable<any>
   {
    return this._httpClient.delete(`http://localhost:5294/api/Exam/DeleteExam?examID=${id}`)
@@ -52,14 +65,10 @@ export class AdminService {
   {
    return this._httpClient.get(`http://localhost:5294/api/Exam/specificexam/${id}`)
   }
-
-  // currentuser:any;
-  // gettokenID(): string {
-  //   let token: any = localStorage.getItem("userInfo");
-  //   this.currentuser = jwtDecode(token);
-  //   console.log(this.currentuser);
-  //   var nameIdentifier = this.currentuser['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
-  //   console.log(nameIdentifier);
-  //   return nameIdentifier;
-  // } 
+  EditQuestion(data:any,id:any):Observable<any>{
+    return this._httpClient.put(`http://localhost:5294/api/Qustion/EditQuestion/${id}`,data)
+  }
+  DeleteQuestion(id:number): Observable<any>{
+    return this._httpClient.delete(`http://localhost:5294/api/Qustion/DeleteQuestion?questionID=${id}`)
+  }
 }

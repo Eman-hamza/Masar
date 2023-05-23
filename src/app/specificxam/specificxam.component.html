@@ -5,6 +5,13 @@
                 <div class="col-12 col-md-11 col-lg-7 col-xl-11">
                     <div class="card" style="border-radius: 15px;border:1px dashed rgb(192, 192, 192);">
                         <div class="card-body p-5">
+                            <!-- {{Questionlist.examsId}} -->
+                            <div *ngFor="let itemm of Questionlist| slice:-1;let i = index">
+                                <ng-container>
+                                <button class="btn btn-outline-dark" (click)="addquestion(itemm.examsId)">إضافة سؤال جديد</button>
+                               </ng-container>
+                            </div>
+                                <hr>                            
                             <div class="row mb-4" *ngFor="let item of Questionlist; let i=index">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form12" style="text-decoration: underline;">{{i+1}} - السؤال</label>
@@ -12,8 +19,8 @@
                                             <p   id="question" style="border:1px dotted gray;padding: 3px;width: 70%;"
                                             >{{item.question}}</p>
                                             <div>
-                                                <button class="btn btn-primary ml-1 mb-1">تعديل</button>
-                                                <button class="btn btn-danger mb-1">حذف</button>
+                                                <button class="btn btn-primary ml-1 mb-1" (click)="NavigateToEdit(item)"  >تعديل</button>
+                                                <button class="btn btn-danger mb-1" (click)="deleteQuestion(item.id)">حذف</button>
                                             </div>
                                         </div>
 

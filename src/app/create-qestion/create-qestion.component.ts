@@ -114,7 +114,7 @@ exit(QuestionFom:any){
   this.admin.AddQuestion(this.QuestionFom.value).subscribe({
     next: (beers) => {
       this.toast.show("تم إضافة السؤال بنجاح")
-       this.router.navigate(["TeacherHome"]);
+       this.router.navigate(["TeacherHome",this.gettokenID()]);
  },
  error: (e) => {
   this.router.navigate(["TeacherHome"]);

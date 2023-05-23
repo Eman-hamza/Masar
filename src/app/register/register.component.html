@@ -79,7 +79,7 @@
                     <div  class="alert mt-2 alert-danger" *ngIf="registerform.get('nationalID')?.errors != null 
                     && registerform.get('nationalID')?.touched" >
                       <p *ngIf="registerform.get('nationalID')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> بطاقة الهوية الوطنية مطلوب</p>
-                      <p *ngIf="registerform.get('nationalID')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> رقم الهوية لابد أن يكون 11 رقم</p>
+                      <p *ngIf="registerform.get('nationalID')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> رقم الهوية لابد أن يكون 10 رقم</p>
                     </div>
                   </div>
 

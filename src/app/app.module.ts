@@ -25,6 +25,7 @@ import { CreateExamComponent } from './create-exam/create-exam.component';
 import { CreateQestionComponent } from './create-qestion/create-qestion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpecificxamComponent } from './specificxam/specificxam.component';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { SpecificxamComponent } from './specificxam/specificxam.component';
     CreateExamComponent,
     CreateQestionComponent,
     SpecificxamComponent,
+    EditQuestionComponent,
   ],
   imports: [
     BrowserModule,

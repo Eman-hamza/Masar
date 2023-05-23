@@ -18,6 +18,7 @@ import { CreateQestionComponent } from './create-qestion/create-qestion.componen
 import { TeatcherPageComponent } from './teatcher-page/teatcher-page.component';
 import { StudentPageComponent } from './student-page/student-page.component';
 import { SpecificxamComponent } from './specificxam/specificxam.component';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
@@ -28,12 +29,13 @@ const routes: Routes = [
   {path:'StudentData',canActivate:[AuthGuard,adminGuard],component:StudentDataComponent},
   {path:'TeacherData',canActivate:[AuthGuard,adminGuard],component:TeacherDataComponent},
   {path:'AdminHome',component:AdminPageComponent},
-  {path:'TeacherHome',component:TeatcherPageComponent},
+  {path:'TeacherHome/:id',component:TeatcherPageComponent},
   {path:'StudentHome',component:StudentPageComponent},
   {path:'GradesStudent/:id',canActivate:[AuthGuard],component:GradesForAdminComponent},
   {path:'CreateExam',canActivate:[AuthGuard,StudentTeatcherGuard],component:CreateExamComponent},
   {path:'CreateQestion/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:CreateQestionComponent},
   {path:'sepcificExam/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:SpecificxamComponent},
+  {path:'editquestion/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:EditQuestionComponent},
 
 
 

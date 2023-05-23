@@ -34,7 +34,7 @@ constructor(public _AuthServices:AuthService
 registerform=this.builder.group({
   username:new FormControl(null,[Validators.pattern('^[A-Za-z0-9 ]*$'),Validators.required]),
   fourthName:new FormControl(null,[Validators.required,Validators.pattern('^[\u0621-\u064A]* [\u0621-\u064A]* [\u0621-\u064A]* [\u0621-\u064A]*$')]),
-  nationalID:new FormControl(null,[Validators.pattern('^[0-9]{11}$'),Validators.required]),
+  nationalID:new FormControl(null,[Validators.pattern('^[0-9]{10}$'),Validators.required]),
   userNumber:new FormControl(null),
   email:new FormControl(null,[Validators.email,Validators.required,Validators.pattern('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$')]),
   password:new FormControl(null,[Validators.required,
