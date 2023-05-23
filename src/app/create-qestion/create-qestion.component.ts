@@ -115,7 +115,11 @@ exit(QuestionFom:any){
     next: (beers) => {
       this.toast.show("تم إضافة السؤال بنجاح")
        this.router.navigate(["TeacherHome"]);
- }
+ },
+ error: (e) => {
+  this.router.navigate(["TeacherHome"]);
+  console.log(e)
+},
 })
 }
 }

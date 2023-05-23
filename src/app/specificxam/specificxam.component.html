@@ -1,0 +1,77 @@
+<section style="margin: 40px;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-11 col-lg-7 col-xl-11">
+                    <div class="card" style="border-radius: 15px;border:1px dashed rgb(192, 192, 192);">
+                        <div class="card-body p-5">
+                            <div class="row mb-4" *ngFor="let item of Questionlist; let i=index">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form12" style="text-decoration: underline;">{{i+1}} - السؤال</label>
+                                        <div style="display: flex;justify-content:space-between;">
+                                            <p   id="question" style="border:1px dotted gray;padding: 3px;width: 70%;"
+                                            >{{item.question}}</p>
+                                            <div>
+                                                <button class="btn btn-primary ml-1 mb-1">تعديل</button>
+                                                <button class="btn btn-danger mb-1">حذف</button>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col col-6">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="radioa"> A )</label>
+                                                        <p  
+                                                             >{{item.option1}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col col-6">
+                                                <div class="form-outline">
+                                                    <label class="form-label" for="radiob"> B )</label>
+                                                    <p  id="radioa"
+                                                    >{{item.option2}}</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mt-4">
+                                                <div class="col col-6">
+                                                    <div class="form-outline" >
+                                                        <label class="form-label" for="radioc"> C )</label>
+                                                        <p 
+                                                         id="radioa"
+                                                        >{{item.option3}}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-6">
+                                                    <div class="form-outline">
+                                                        <label class="form-label" for="radiod">D )</label>
+                                                        <p  id="radioa"
+                                                         >{{item.option4}}</p>
+                                                    </div>
+                                                </div>
+                                                <!-- ************************************ -->
+                                                <div class="col col-5 mt-3" style="display:flex;justify-content: space-between;">
+                                                    <div class="form-outline">
+                                                      <label class="form-label" for="form11Example2">درجة السؤال</label>
+                                                      <p type="number"  id="form11Example2"  class="form-control">{{item.questionDegree}}</p>
+                                                    </div>
+                                                    <div class="form-outline">
+                                                        <label class="form-label" for="form11Example2">الإجابة الصحيحة</label>
+                                                        <p type="number"  id="form11Example2"  class="form-control" style="color:red;">{{item.correctAnswer |uppercase }}</p>
+                                                      </div>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button style="height: 3px;border-top: 3px double #3c7a4a;border-bottom: transparent;border-left: transparent;border-right: transparent;" ></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

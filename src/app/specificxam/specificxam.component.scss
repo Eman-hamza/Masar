@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+section{
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+label {
+    display: flex;
+    justify-content:start; 
+    font-size: 20px;
+}
+p{
+    display: flex;
+    justify-content: start;
+    border-bottom:1px solid rgb(201, 201, 201);
+    padding: 5px;
+    font-size: 20px;
+}

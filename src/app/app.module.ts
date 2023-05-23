@@ -24,6 +24,7 @@ import { GradesForAdminComponent } from './grades-for-admin/grades-for-admin.com
 import { CreateExamComponent } from './create-exam/create-exam.component';
 import { CreateQestionComponent } from './create-qestion/create-qestion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpecificxamComponent } from './specificxam/specificxam.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GradesForAdminComponent,
     CreateExamComponent,
     CreateQestionComponent,
+    SpecificxamComponent,
   ],
   imports: [
     BrowserModule,

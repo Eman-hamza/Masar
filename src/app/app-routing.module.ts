@@ -17,6 +17,7 @@ import { CreateExamComponent } from './create-exam/create-exam.component';
 import { CreateQestionComponent } from './create-qestion/create-qestion.component';
 import { TeatcherPageComponent } from './teatcher-page/teatcher-page.component';
 import { StudentPageComponent } from './student-page/student-page.component';
+import { SpecificxamComponent } from './specificxam/specificxam.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'GradesStudent/:id',canActivate:[AuthGuard],component:GradesForAdminComponent},
   {path:'CreateExam',canActivate:[AuthGuard,StudentTeatcherGuard],component:CreateExamComponent},
   {path:'CreateQestion/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:CreateQestionComponent},
+  {path:'sepcificExam/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:SpecificxamComponent},
 
 
 

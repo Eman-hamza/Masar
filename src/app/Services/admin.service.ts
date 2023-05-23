@@ -48,6 +48,10 @@ export class AdminService {
   {
    return this._httpClient.post("http://localhost:5294/api/Qustion/AddQuestion",data)
   }
+  specificExam(id:any):Observable<any>
+  {
+   return this._httpClient.get(`http://localhost:5294/api/Exam/specificexam/${id}`)
+  }
 
   // currentuser:any;
   // gettokenID(): string {

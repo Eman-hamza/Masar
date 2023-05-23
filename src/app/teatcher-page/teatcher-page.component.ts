@@ -29,6 +29,9 @@ ngOnInit(): void {
 NavigateToexamGrade(id:any){
   this.route.navigate(["GradesStudent",id.id]);
 }
+NavigateToexamGradeto(id:any){
+  this.route.navigate(["sepcificExam",id.id]);
+}
 currentuser:any;
 gettokenID(): string {
   let token: any = localStorage.getItem("userInfo");
