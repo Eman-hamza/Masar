@@ -56,14 +56,19 @@ export class HeaderComponent implements OnInit{
   message(){
     this.toast.info("If you want to create Profile go to Create Profile, If not ... continue :) ")
   }
-  currentuser:any;
-  gettokenID(): string {
+  currentuser:any
+  gettokenID(): any {
+    try{
     let token: any = localStorage.getItem("userInfo");
     this.currentuser = jwtDecode(token);
     console.log(this.currentuser);
     var nameIdentifier = this.currentuser['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
     console.log(nameIdentifier);
     return nameIdentifier;
-  } 
+    }
+    catch(e){
+      localStorage.clear() 
+      console.log(e)}
+    }
   idj:string=this.gettokenID();
 }

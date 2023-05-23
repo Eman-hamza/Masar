@@ -22,7 +22,7 @@ import { EditQuestionComponent } from './edit-question/edit-question.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
-  {path:'Home',canActivate:[AuthGuard,StudentTeatcherGuard],component:HomeComponent},
+  {path:'Home',component:HomeComponent},
   {path:'Login',component:LoginComponent},
   {path:'Register',component:RegisterComponent},
   {path:'BeforeRegister',component:BeforeRegisterComponent},
