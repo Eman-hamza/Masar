@@ -65,7 +65,7 @@ export class EditQuestionComponent implements OnInit{
   }
   )}
   exit(QuestionFom:any){
-         this.router.navigate(["sepcificExam"]);
+         this.router.navigate(["sepcificExam",this.route.snapshot.paramMap.get("id")]);
    }
 
   //  ******************************************************

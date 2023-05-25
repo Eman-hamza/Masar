@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import jwtDecode from 'jwt-decode';
 import { Observable } from 'rxjs';
+import { StudentAnswerDTO } from '../interface/StudentAnswerDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -70,5 +71,11 @@ export class AdminService {
   }
   DeleteQuestion(id:number): Observable<any>{
     return this._httpClient.delete(`http://localhost:5294/api/Qustion/DeleteQuestion?questionID=${id}`)
+  }
+  getQuestionByExamId(id:any):Observable<any>{
+    return this._httpClient.get(`http://localhost:5294/api/Qustion/getTheQuestionToStudent?examId=${id}`)
+  }
+  gettheScore(studentans:StudentAnswerDTO):Observable<any>{
+    return this._httpClient.post(`http://localhost:5294/api/AnsweOfTheStudent/AnswerOfTheStudent`,studentans);
   }
 }

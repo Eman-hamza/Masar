@@ -9,7 +9,8 @@
 
               <form [formGroup]="dataform" (ngSubmit)='chooseCF(dataform)'>
                 <div class="row d-flex justify-content-center align-items-center h-100" style="margin: 20px;">
-                    <div  class="col-5 mr-3" style="border:3px solid #40844e;border-radius: 10px;margin-left: 10px;">
+                    <div  class="col-xl-5 col-lg-5 mr-3 col-sm-12" style="border:3px solid #40844e;border-radius: 10px;margin-left: 5px;    margin-top: 20px;
+                    ">
                      <div style="display: flex;justify-content: space-between;padding: 10px;">
                       <div id="btn" style="font-size: 19px;font-weight: 900;height: 100px;">
                         معلم
@@ -21,7 +22,7 @@
                        </div>
                         </div>
                       </div>
-                    <div id="btn" class="col-5" style="border:3px solid #40844e;border-radius: 10px;margin-right: 10px;" >
+                    <div id="btn" class="col-xl-5 col-lg-5 mr-3 col-sm-12" style="border:3px solid #40844e;border-radius: 10px;margin-right: 5px;margin-top: 20px; " >
                       <div style="display: flex;justify-content: space-between;padding: 10px;">
                         <div style="font-size: 19px;font-weight: 900;height: 100px;">
                           طالب
@@ -40,7 +41,7 @@
                     [disabled]="dataform.invalid"
                     
                     
-                    class="btn btn-block btn-lg" style="width:40%;height: 50px;border-radius: 25px;background-color: #40844e;color:white;font-size:16px"
+                    class="btn btn-block btn-lg bt-sm" style="width:auto;height: 60px;border-radius: 30px;background-color: #40844e;color:white;font-size:16px;padding: 10px;"
                     (click)="setUser()">
                      تسجيل الدخول كـ {{namePro}}</button>
                 </div>

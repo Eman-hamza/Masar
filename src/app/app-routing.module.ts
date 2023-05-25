@@ -19,9 +19,16 @@ import { TeatcherPageComponent } from './teatcher-page/teatcher-page.component';
 import { StudentPageComponent } from './student-page/student-page.component';
 import { SpecificxamComponent } from './specificxam/specificxam.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { QuestionforstudentComponent } from './questionforstudent/questionforstudent.component';
+import { ExamsForStudentComponent } from './exams-for-student/exams-for-student.component';
+import { DisplaytheresultComponent } from './displaytheresult/displaytheresult.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
+  // {path:'',redirectTo:'AdminHome',*ngIf="isLogin&&isstudent&&!isAdmin",pathMatch:'full'},
+  // {path:'',redirectTo:'StudentHome',canActivate:[AuthGuard,StudentTeatcherGuard],pathMatch:'full'},
+  // {path:'',redirectTo:'TeacherHome/:id',canActivate:[AuthGuard,StudentTeatcherGuard],pathMatch:'full'},
+
   {path:'Home',component:HomeComponent},
   {path:'Login',component:LoginComponent},
   {path:'Register',component:RegisterComponent},
@@ -36,7 +43,9 @@ const routes: Routes = [
   {path:'CreateQestion/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:CreateQestionComponent},
   {path:'sepcificExam/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:SpecificxamComponent},
   {path:'editquestion/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:EditQuestionComponent},
-
+  {path:'Questionforstudent/:id',canActivate:[AuthGuard,StudentTeatcherGuard],component:QuestionforstudentComponent},
+  {path:'examsForStudent',canActivate:[AuthGuard,StudentTeatcherGuard],component:ExamsForStudentComponent},
+  {path:'displaytheResult',canActivate:[AuthGuard,StudentTeatcherGuard] ,component:DisplaytheresultComponent},
 
 
 

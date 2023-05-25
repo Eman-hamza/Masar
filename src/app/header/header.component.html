@@ -31,7 +31,7 @@
             <div class="navbar-collapse" id="collapse" >
                  <ul class="nav navbar-nav me-auto">
                   <li class="nav-item">
-                    <a class="nav-link" *ngIf="isLogin&&!isAdmin"  [routerLink]="['/Home']" routerLinkActive="active">الصفحة الرئيسة</a>
+                    <a class="nav-link" *ngIf="isLogin&&!isAdmin&&isstudent&&!isstudent"  [routerLink]="['/Home']" routerLinkActive="active">الصفحة الرئيسة</a>
                   </li>
                   <!-- *************************************************  teacher **************************************** -->
                   <li class="nav-item">
@@ -60,11 +60,11 @@
                   
                   <!-- ********************************************** Student ********************************************* -->
 
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" *ngIf="isLogin&&!isfree"   [routerLink]="['/addjob']" routerLinkActive="active">Add Job</a>
+                  <li class="nav-item">
+                    <a class="nav-link" *ngIf="isLogin&&isstudent&&!isAdmin" [routerLink]="['/examsForStudent']" routerLinkActive="active">الاختبارات  </a>
                   </li>
 
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a class="nav-link" *ngIf="isLogin&&!isfree"   [routerLink]="['/clientJobs']" routerLinkActive="active">client Jobs</a>
                   </li> -->
                 </ul>

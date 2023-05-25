@@ -26,6 +26,9 @@ import { CreateQestionComponent } from './create-qestion/create-qestion.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpecificxamComponent } from './specificxam/specificxam.component';
 import { EditQuestionComponent } from './edit-question/edit-question.component';
+import { ExamsForStudentComponent } from './exams-for-student/exams-for-student.component';
+import { QuestionforstudentComponent } from './questionforstudent/questionforstudent.component';
+import { DisplaytheresultComponent } from './displaytheresult/displaytheresult.component';
 
 
 @NgModule({
@@ -48,6 +51,10 @@ import { EditQuestionComponent } from './edit-question/edit-question.component';
     CreateQestionComponent,
     SpecificxamComponent,
     EditQuestionComponent,
+    ExamsForStudentComponent,
+    QuestionforstudentComponent,
+    DisplaytheresultComponent
+
   ],
   imports: [
     BrowserModule,

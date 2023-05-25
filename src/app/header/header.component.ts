@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/core';
 import { AuthService } from '../Services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import jwtDecode from 'jwt-decode';
 import { UserRoleService } from '../Services/user-role.service';
 import { StudentTeatcherGuard } from '../student-teatcher.guard';
 import {  adminGuard } from '../admin.guard';
+import { AdminService } from '../Services/admin.service';
 // import { BeforeRegisterComponent } from '../before-register/before-register.component';
 // import { FreelancerValueService } from '../Services/freelancer-value.service';
 // import { FreelancerGuard } from '../freelancer.guard';
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit{
   isstudent:boolean=false;
   isAdmin:boolean=false;
 
-  constructor(private auth:AuthService,private toast:ToastrService,private uerrole:StudentTeatcherGuard,private admin:adminGuard){}//,private jwtHelper:JwtHelperService){}
+  constructor(private auth:AuthService,private adminser:AdminService,private toast:ToastrService,private uerrole:StudentTeatcherGuard,private admin:adminGuard){}//,private jwtHelper:JwtHelperService){}
    
   ngOnInit(): void {
     this.auth.userdata.subscribe(()=>{
@@ -45,6 +46,7 @@ export class HeaderComponent implements OnInit{
         // if(this.admin.canActivate()){
         //   this.isAdmin=true;
         // }
+
     })  
 
   }
