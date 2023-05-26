@@ -10,11 +10,11 @@
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form12">السؤال</label>
                                         <input style="border:1px solid gray;" type="text" id="question"
-                                            class="form-control"  formControlName="question"/>
+                                            class="form-control"  formControlName="question" [(ngModel)]="oldExam.question"/>
                                     </div>
                                     <div>
                                         <div class="row">
-                                            <div class="col col-6">
+                                            <div class="col col-lg-6">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="radioa">إجابة أ</label>
                                                     <div style="display:flex;justify-content: space-between;">
@@ -22,11 +22,11 @@
                                                             id="radioa" value="a" (change)="onChange($event)"
                                                             />
                                                         <input style="margin-right: 30px;" type="text" id="radioa"
-                                                            class="form-control" formControlName="option1"/>
+                                                            class="form-control" formControlName="option1" [(ngModel)]="oldExam.option1"/>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col col-6">
+                                            <div class="col col-lg-6">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="radiob">إجابة ب</label>
                                                     <div style="display:flex;justify-content: space-between;">
@@ -34,31 +34,31 @@
                                                             id="radiob" value="b"  (change)="onChange($event)" 
                                                             />
                                                         <input style="margin-right: 30px;" type="text" id="radiob"
-                                                            class="form-control" formControlName="option2" />
+                                                            class="form-control" formControlName="option2" [(ngModel)]="oldExam.option2"/>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="row mt-4">
-                                                <div class="col col-6">
+                                                <div class="col col-lg-6">
                                                     <div class="form-outline">
                                                         <label class="form-label" for="radioc">إجابة ج</label>
                                                         <div style="display:flex;justify-content: space-between;">
                                                             <input class="form-check-input" type="radio"  name="radioa" [checked]="radioStatus"
                                                                 id="radioc" value="c" (change)="onChange($event)"                                                         />
                                                             <input style="margin-right: 30px;" type="text" id="radioc"
-                                                                class="form-control" formControlName="option3"/>
+                                                                class="form-control" formControlName="option3" [(ngModel)]="oldExam.option3"/>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col col-6">
+                                                <div class="col col-lg-6">
                                                     <div class="form-outline">
                                                         <label class="form-label" for="radiod">إجابة د</label>
                                                         <div style="display:flex;justify-content: space-between;">
                                                             <input class="form-check-input" type="radio"  name="radioa" [checked]="radioStatus"
                                                                 id="radiod" value="d" (change)="onChange($event) "                                                           />
                                                             <input style="margin-right: 30px;" type="text" id="radiod"
-                                                                class="form-control" formControlName="option4"/>
+                                                                class="form-control" formControlName="option4" [(ngModel)]="oldExam.option4"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -66,7 +66,7 @@
                                                 <div class="col mt-3">
                                                     <div class="form-outline">
                                                       <label class="form-label" for="form11Example2">درجة السؤال</label>
-                                                      <input type="number" id="form11Example2" formControlName="questionDegree" class="form-control" />
+                                                      <input type="number" id="form11Example2" formControlName="questionDegree" class="form-control" [(ngModel)]="oldExam.questionDegree"/>
                                                     </div>
                                                   </div>
                                             </div>

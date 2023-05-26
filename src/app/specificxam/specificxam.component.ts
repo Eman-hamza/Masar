@@ -44,6 +44,7 @@ id:any;
 GetSpesicfic(){
   this.id=this.router.snapshot.paramMap.get("id");
   this.admin.specificExam(this.id).subscribe((response)=>{
+    console.log(this.Questionlist);
     this.Questionlist=response;
     console.log(response);
   })
@@ -51,7 +52,8 @@ GetSpesicfic(){
 ngOnInit(): void {
 this.GetSpesicfic();
 }
-NavigateToEdit(id:any){
+
+NavigateToEdit(id:any){  
   this.route.navigate(["editquestion",id.id]);
 }
 deleteQuestion(id:number){

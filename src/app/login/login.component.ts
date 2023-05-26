@@ -45,7 +45,7 @@ export class LoginComponent {
       this._AuthServices.Login(Loginform.value).subscribe((response)=>{
         if(response.message!="NotValid"){
 
-          this.toast.success("Successuflly Login , Welcome :) ")
+          this.toast.success("تم تسجيل الدخول بنجاح , مرحبا بك في موقعنا ")
           localStorage.setItem('userInfo',response.token)
           this.userData=this._AuthServices.saveData();
           this.userDataid=this.gettokenID();
@@ -55,7 +55,7 @@ export class LoginComponent {
         }
         else{
             //error in Api  {errors}
-          this.toast.error("The username or password were not recognised")
+          this.toast.error("لم يتم التعرف علي اسم المستخدم أو كلمة المرور")
             this.loginInvalid = true;
             this._route.navigate(['/Login']) 
         }

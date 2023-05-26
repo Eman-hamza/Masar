@@ -29,6 +29,7 @@ import { EditQuestionComponent } from './edit-question/edit-question.component';
 import { ExamsForStudentComponent } from './exams-for-student/exams-for-student.component';
 import { QuestionforstudentComponent } from './questionforstudent/questionforstudent.component';
 import { DisplaytheresultComponent } from './displaytheresult/displaytheresult.component';
+// import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
 
 
 @NgModule({

@@ -63,6 +63,8 @@
                     <div  class="alert mt-2 alert-danger" *ngIf="registerform.get('fourthName')?.errors != null 
                     && registerform.get('fourthName')?.touched" >
                       <p *ngIf="registerform.get('fourthName')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> الإسم رباعي مطلوب</p>
+                      <p *ngIf="registerform.get('fourthName')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i>الإسم رباعي مطلوب</p>
+
                     </div>
                   </div>
                   <!-- ******************************* NationalID ********************************** -->
@@ -106,8 +108,8 @@
                     <!-- //error alert -->
                     <div style="height: 50px;" class="alert mt-2 alert-danger" *ngIf="registerform.get('email')?.errors != null 
                     && registerform.get('email')?.touched" >
-                      <p *ngIf="registerform.get('email')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i> email is required</p>
-                      <p *ngIf="registerform.get('email')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> email must contains @ </p>
+                      <p *ngIf="registerform.get('email')?.errors?.['required'] "><i class="fa-solid fa-circle-exclamation"></i>الايميل مطلوب</p>
+                      <p *ngIf="registerform.get('email')?.errors?.['pattern'] "><i class="fa-solid fa-circle-exclamation"></i> الايميل غير صحيح</p>
                       <!-- <p>email must contians @</p> -->
                     </div>
                     <!-- <label class="form-label" for="form2Example17">Email address</label> -->

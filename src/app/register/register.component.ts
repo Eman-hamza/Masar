@@ -57,7 +57,7 @@ public RegisterInvalid = false;
 submitRegister(data:FormGroup){
   this._AuthServices.Register(data.value).subscribe((info) => {
     if (info.message=="Success") {
-      this.toast.success("Successuflly Register")
+      this.toast.success("تم إنشاءالحساب بنجاح")
       this._route.navigate(['/Login']);
       console.log(" Successuflly Register")
     }

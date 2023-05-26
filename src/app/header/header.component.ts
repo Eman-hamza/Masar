@@ -73,4 +73,7 @@ export class HeaderComponent implements OnInit{
       console.log(e)}
     }
   idj:string=this.gettokenID();
+
+  // ****************************************************
+  
 }

@@ -12,6 +12,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class EditQuestionComponent implements OnInit{
   
   constructor(private admin:AdminService,private toast:ToastrService,private route:ActivatedRoute,private router:Router,private builder:FormBuilder){}
+  oldExam:any;
 
   QuestionFom:FormGroup=this.builder.group({
 
@@ -27,11 +28,12 @@ export class EditQuestionComponent implements OnInit{
 
   quesId:any;
   idexam:any;
+  
 
   ngOnInit(): void {
     console.log(this.QuestionFom.value)
     this.idexam=<any>this.QuestionFom.get('examsId')
-    console.log("^^^iid exam^^^^");
+    console.log("^^^id exam^^^^");
     console.log(this.idexam.value);
 
     this.quesId=this.route.snapshot.paramMap.get("id");
@@ -39,7 +41,11 @@ export class EditQuestionComponent implements OnInit{
     console.log("^^^^^^^");
     console.log(this.quesId);
 
-
+// *************************
+    this.admin.getOldExam(this.quesId).subscribe((resp)=>{
+    this.oldExam=resp;
+    console.log("old exam",this.oldExam);
+    })
 
   }
   onChange(e:any) {
@@ -54,18 +60,18 @@ export class EditQuestionComponent implements OnInit{
     this.admin.EditQuestion(QuestionFom.value,this.quesId).subscribe({
       next: (beers) => {
         this.toast.success("تم التعديل بنجاح")
-        
-        //  this.router.navigate([`sepcificExam/${idexam?.value}`]);
-        this.router.navigate([`TeacherHome`]);
+        console.log(this.QuestionFom.controls['examsId'].value)
+        this.router.navigate([`sepcificExam`,this.oldExam.examsId]);
 
    },
    error: (e) => {
     console.log(e)
+    this.toast.error("من فضلك ادخل الإجابة الصحيحة")
     }
   }
   )}
   exit(QuestionFom:any){
-         this.router.navigate(["sepcificExam",this.route.snapshot.paramMap.get("id")]);
+         this.router.navigate([`sepcificExam`,this.quesId]);
    }
 
   //  ******************************************************

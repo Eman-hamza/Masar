@@ -78,4 +78,13 @@ export class AdminService {
   gettheScore(studentans:StudentAnswerDTO):Observable<any>{
     return this._httpClient.post(`http://localhost:5294/api/AnsweOfTheStudent/AnswerOfTheStudent`,studentans);
   }
+  getOldExam(id:any):Observable<any>{
+    return this._httpClient.get(`http://localhost:5294/api/Qustion/OldExam/${id}`,id);
+  }
+  getExamNotExmine(id:any):Observable<any>{
+    return this._httpClient.get(`http://localhost:5294/api/Exam/GetExamThatNotExamined?studentId=${id}`,id);
+  }  
+  getDone(stid:any,examid:any):Observable<any>{
+    return this._httpClient.get(`http://localhost:5294/api/Exam/IsDone?stdId=${stid}&ExamId=${examid}`);
+  }
 }
